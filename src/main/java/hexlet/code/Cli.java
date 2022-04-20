@@ -12,7 +12,7 @@ public class Cli {
     public static void start() {
         System.out.println("Welcome to the Brain Games!");
         String name = getString("May I have your name?");
-        System.out.println("Hello, " + name);
+        System.out.printf("Hello, %s!%s", name, System.lineSeparator());
     }
 
     private static String getString(String message) {
