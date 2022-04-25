@@ -17,4 +17,9 @@ public final class Cli {
     public static int readInt() {
         return Integer.parseInt(SCANNER.nextLine());
     }
+
+    public static int readInt(String message) {
+        System.out.print(message);
+        return readInt();
+    }
 }

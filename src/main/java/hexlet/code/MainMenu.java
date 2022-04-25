@@ -26,7 +26,7 @@ public class MainMenu {
         while (selection != exit) {
             games.forEach((key, value) -> out.printf("%d - %s%s", key, value.getName(), lineSeparator()));
             out.printf("%d - Exit%s", exit, lineSeparator());
-            selection = Cli.readInt();
+            selection = Cli.readInt("Your choice: ");
             if (selection != exit) {
                 games.get(selection).start(player);
             }
