@@ -2,9 +2,9 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-public class Cli {
+public final class Cli {
 
-    private static final Scanner scanner = new Scanner(System.in);
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     private Cli() {
     }
@@ -17,6 +17,6 @@ public class Cli {
 
     private static String getString(String message) {
         System.out.println(message);
-        return scanner.nextLine();
+        return SCANNER.nextLine();
     }
 }
