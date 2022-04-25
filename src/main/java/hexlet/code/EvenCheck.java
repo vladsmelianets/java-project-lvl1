@@ -34,7 +34,7 @@ public class EvenCheck implements Game {
             out.println("Question: " + number);
             String answer = Cli.readString("Your answer: ");
 
-            String correctAnswer = number % 2 == 0 ? YES : NO;
+            String correctAnswer = getCorrectAnswer(number);
             if (answer.equals(correctAnswer)) {
                 guesses++;
                 out.println("Correct!");
@@ -45,5 +45,9 @@ public class EvenCheck implements Game {
         }
 
         out.printf("Congratulations, %s!%s", player.getName(), lineSeparator());
+    }
+
+    private String getCorrectAnswer(int number) {
+        return number % 2 == 0 ? YES : NO;
     }
 }
