@@ -2,6 +2,6 @@ package hexlet.code;
 
 public interface Game {
 
-    public String getName();
-    public void start(String playerName);
+    String getName();
+    void start(Player player);
 }

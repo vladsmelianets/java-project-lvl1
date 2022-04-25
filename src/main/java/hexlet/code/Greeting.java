@@ -14,9 +14,9 @@ public class Greeting implements Game {
     }
 
     @Override
-    public void start(String playerName) {
+    public void start(Player player) {
         System.out.println("Welcome to the Brain Games!");
-        playerName = Cli.readString("May I have your name?");
-        System.out.printf("Hello, %s!%s", playerName, System.lineSeparator());
+        player.setName(Cli.readString("May I have your name? "));
+        System.out.printf("Hello, %s!%s", player.getName(), System.lineSeparator());
     }
 }

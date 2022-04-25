@@ -13,11 +13,9 @@ public class EvenCheck implements Game {
 
     private final String name;
     private final Random rnd;
-    private int guesses;
 
     public EvenCheck() {
         this.name = "Even";
-        guesses = 0;
         rnd = new Random();
     }
 
@@ -27,9 +25,10 @@ public class EvenCheck implements Game {
     }
 
     @Override
-    public void start(String playerName) {
+    public void start(Player player) {
         out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
+        int guesses = 0;
         while (guesses < GUESSES_TO_WIN) {
             int number = rnd.nextInt();
             out.println("Question: " + number);
@@ -41,10 +40,10 @@ public class EvenCheck implements Game {
                 out.println("Correct!");
             } else {
                 out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%sLet's try again, %s!%s", answer,
-                        correctAnswer, lineSeparator(), playerName, lineSeparator());
+                        correctAnswer, lineSeparator(), player.getName(), lineSeparator());
             }
         }
 
-        out.printf("Congratulations, %s!%s", playerName, lineSeparator());
+        out.printf("Congratulations, %s!%s", player.getName(), lineSeparator());
     }
 }

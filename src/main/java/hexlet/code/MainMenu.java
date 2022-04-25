@@ -8,16 +8,15 @@ import static java.lang.System.out;
 
 public class MainMenu {
 
-    private String playerName;
+    private final Player player;
 
-    Map<Integer, Game> games;
+    private final Map<Integer, Game> games;
 
     MainMenu() {
-        playerName = "Unknown Player";
+        player = new Player("Unknown Player");
         games = new HashMap<>();
         games.put(1, new Greeting());
         games.put(2, new EvenCheck());
-
     }
 
     public void start() {
@@ -28,8 +27,8 @@ public class MainMenu {
             games.forEach((key, value) -> out.printf("%d - %s%s", key, value.getName(), lineSeparator()));
             out.printf("%d - Exit%s", exit, lineSeparator());
             selection = Cli.readInt();
-            if(selection != exit) {
-                games.get(selection).start(playerName);
+            if (selection != exit) {
+                games.get(selection).start(player);
             }
         }
     }
