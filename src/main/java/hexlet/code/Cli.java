@@ -9,14 +9,12 @@ public final class Cli {
     private Cli() {
     }
 
-    public static void start() {
-        System.out.println("Welcome to the Brain Games!");
-        String name = getString("May I have your name?");
-        System.out.printf("Hello, %s!%s", name, System.lineSeparator());
+    public static String readString(String message) {
+        System.out.print(message);
+        return SCANNER.nextLine();
     }
 
-    private static String getString(String message) {
-        System.out.println(message);
-        return SCANNER.nextLine();
+    public static int readInt() {
+        return Integer.parseInt(SCANNER.nextLine());
     }
 }
