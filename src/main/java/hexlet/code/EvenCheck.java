@@ -41,10 +41,12 @@ public class EvenCheck implements Game {
             } else {
                 out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%sLet's try again, %s!%s", answer,
                         correctAnswer, lineSeparator(), player.getName(), lineSeparator());
+                break;
             }
         }
-
-        out.printf("Congratulations, %s!%s", player.getName(), lineSeparator());
+        if (guesses >= GUESSES_TO_WIN) {
+            out.printf("Congratulations, %s!%s", player.getName(), lineSeparator());
+        }
     }
 
     private String getCorrectAnswer(int number) {
