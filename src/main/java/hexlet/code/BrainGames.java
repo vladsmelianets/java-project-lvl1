@@ -38,6 +38,7 @@ public class BrainGames {
     }
 
     private void displayOptions() {
+        out.println("Please enter the game number and press Enter.");
         out.printf("%d - Greet%s", GREET, lineSeparator());
         games.forEach((key, value) -> out.printf("%d - %s%s", key, value.getName(), lineSeparator()));
         out.printf("%d - Exit%s", EXIT, lineSeparator());
