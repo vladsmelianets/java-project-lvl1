@@ -2,37 +2,35 @@ package hexlet.code;
 
 import hexlet.code.games.Game;
 import hexlet.code.model.GameSession;
-import hexlet.code.model.Player;
 import hexlet.code.utils.Cli;
 
 import static java.lang.System.lineSeparator;
 import static java.lang.System.out;
 
-public class Engine {
+public final class Engine {
 
-    private final Player player;
-    private final int guessesToWin;
+    private final String playerName;
+    public static final int GUESSES_TO_WIN = 3;
 
-    public Engine(Player player, int guessesToWin) {
-        this.player = player;
-        this.guessesToWin = guessesToWin;
+    public Engine(String playerName) {
+        this.playerName = playerName;
     }
 
     public void start(Game game) {
         out.println(game.getRules());
         int guesses = 0;
-        while (guesses < guessesToWin) {
+        while (guesses < GUESSES_TO_WIN) {
             GameSession session = game.getSession();
             out.println("Question: " + session.getQuestion());
             String playerAnswer = Cli.readString("Your answer: ");
             if (!playerAnswer.equals(session.getAnswer())) {
                 out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%sLet's try again, %s!%s", playerAnswer,
-                        session.getAnswer(), lineSeparator(), player.getName(), lineSeparator());
+                        session.getAnswer(), lineSeparator(), playerName, lineSeparator());
                 return;
             }
             guesses++;
             out.println("Correct!");
         }
-        out.printf("Congratulations, %s!%s", player.getName(), lineSeparator());
+        out.printf("Congratulations, %s!%s", playerName, lineSeparator());
     }
 }

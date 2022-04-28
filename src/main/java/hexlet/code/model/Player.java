@@ -1,6 +1,6 @@
 package hexlet.code.model;
 
-public class Player {
+public final class Player {
 
     private String name;
 

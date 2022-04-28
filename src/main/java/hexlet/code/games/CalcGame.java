@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.model.GameSession;
 import hexlet.code.utils.GameRandomizer;
 
-public class CalcGame implements Game {
+public final class CalcGame implements Game {
 
     private final String name;
     private final String rules;

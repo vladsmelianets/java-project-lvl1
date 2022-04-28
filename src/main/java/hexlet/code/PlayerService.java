@@ -3,7 +3,7 @@ package hexlet.code;
 import hexlet.code.model.Player;
 import hexlet.code.utils.Cli;
 
-public class PlayerService {
+public final class PlayerService {
 
     public void greet(Player player) {
         System.out.println("Welcome to the Brain Games!");

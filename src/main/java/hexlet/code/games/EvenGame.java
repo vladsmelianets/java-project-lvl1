@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.model.GameSession;
 import hexlet.code.utils.GameRandomizer;
 
-public class EvenGame implements Game {
+public final class EvenGame implements Game {
 
     private static final String YES = "yes";
     private static final String NO = "no";

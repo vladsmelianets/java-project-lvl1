@@ -1,6 +1,6 @@
 package hexlet.code.model;
 
-public class GameSession {
+public final class GameSession {
 
     private String question;
     private String answer;
