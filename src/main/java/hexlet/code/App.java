@@ -4,8 +4,7 @@ import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
 import hexlet.code.games.Game;
 import hexlet.code.games.GcdGame;
-import hexlet.code.model.Player;
-import hexlet.code.utils.Cli;
+import hexlet.code.utils.CliHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -22,9 +21,7 @@ public class App {
     private static final int THREE = 3;
     private static final int FOUR = 4;
 
-
     public static void main(String[] args) {
-        Player player = new Player("Unknown Player");
         String playerName = "Unknown Player";
 
         Map<Integer, Game> games = new HashMap<>();
@@ -40,10 +37,10 @@ public class App {
             games.forEach((key, value) -> out.printf("%d - %s%s", key, value.getName(), lineSeparator()));
             out.printf("%d - Exit%s", EXIT, lineSeparator());
 
-            selection = Cli.readInt("Your choice: ");
+            selection = CliHelper.readInt("Your choice: ");
 
             if (selection == GREET) {
-                new PlayerService().greet(player);
+                playerName = Cli.greet();
             } else if (selection != EXIT) {
                 new Engine(playerName).start(games.get(selection));
             }

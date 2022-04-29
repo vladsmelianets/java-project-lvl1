@@ -2,7 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Game;
 import hexlet.code.model.GameSession;
-import hexlet.code.utils.Cli;
+import hexlet.code.utils.CliHelper;
 
 import static java.lang.System.lineSeparator;
 import static java.lang.System.out;
@@ -22,7 +22,7 @@ public final class Engine {
         while (guesses < GUESSES_TO_WIN) {
             GameSession session = game.getSession();
             out.println("Question: " + session.getQuestion());
-            String playerAnswer = Cli.readString("Your answer: ");
+            String playerAnswer = CliHelper.readString("Your answer: ");
             if (!playerAnswer.equals(session.getAnswer())) {
                 out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.%sLet's try again, %s!%s", playerAnswer,
                         session.getAnswer(), lineSeparator(), playerName, lineSeparator());
