@@ -4,6 +4,7 @@ import hexlet.code.games.CalcGame;
 import hexlet.code.games.EvenGame;
 import hexlet.code.games.Game;
 import hexlet.code.games.GcdGame;
+import hexlet.code.games.ProgressionGame;
 import hexlet.code.utils.CliHelper;
 
 import java.util.HashMap;
@@ -20,6 +21,7 @@ public class App {
     private static final int TWO = 2;
     private static final int THREE = 3;
     private static final int FOUR = 4;
+    private static final int FIVE = 5;
 
     public static void main(String[] args) {
         String playerName = "Unknown Player";
@@ -28,6 +30,7 @@ public class App {
         games.put(TWO, new EvenGame());
         games.put(THREE, new CalcGame());
         games.put(FOUR, new GcdGame());
+        games.put(FIVE, new ProgressionGame());
 
         int selection = -1;
         while (selection != EXIT) {
