@@ -35,7 +35,7 @@ public final class ProgressionGame implements Game {
         int progressionLength = random.nextInt(LOW_DICE, HIGH_DICE);
         int hiddenNumberIndex = random.nextInt(progressionLength + 1);
         int baseValue = random.nextInt(TWO_DIGIT_BOUND);
-        int iterationValue = random.nextInt(LOW_DICE + 1,HIGH_DICE + 1);
+        int iterationValue = random.nextInt(LOW_DICE + 1, HIGH_DICE + 1);
 
         StringBuilder question = new StringBuilder(baseValue);
         String answer = "";
