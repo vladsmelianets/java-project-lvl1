@@ -2,12 +2,12 @@ package hexlet.code.model;
 
 public final class GameSession {
 
-    private String question;
-    private String answer;
+    private final String question;
+    private final String answer;
 
-    public GameSession(String question, String answer) {
-        this.question = question;
-        this.answer = answer;
+    public GameSession(String sessionQuestion, String sessionAnswer) {
+        this.question = sessionQuestion;
+        this.answer = sessionAnswer;
     }
 
     public String getQuestion() {

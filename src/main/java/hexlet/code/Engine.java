@@ -12,8 +12,8 @@ public final class Engine {
     private final String playerName;
     public static final int GUESSES_TO_WIN = 3;
 
-    public Engine(String playerName) {
-        this.playerName = playerName;
+    public Engine(String newPlayerName) {
+        this.playerName = newPlayerName;
     }
 
     public void start(Game game) {
