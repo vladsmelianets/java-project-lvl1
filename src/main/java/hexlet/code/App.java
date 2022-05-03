@@ -26,7 +26,6 @@ public class App {
     private static final int SIX = 6;
 
     public static void main(String[] args) {
-        String playerName = "Unknown Player";
 
         Map<Integer, Game> games = new HashMap<>();
         games.put(TWO, new EvenGame());
@@ -36,21 +35,19 @@ public class App {
         games.put(SIX, new PrimeGame());
 
         int selection = -1;
-        while (selection != EXIT) {
 
-            out.println("Please enter the game number and press Enter.");
-            out.printf("%d - Greet%s", GREET, lineSeparator());
-            games.forEach((key, value) -> out.printf("%d - %s%s", key, value.getName(), lineSeparator()));
-            out.printf("%d - Exit%s", EXIT, lineSeparator());
+        out.println("Please enter the game number and press Enter.");
+        out.printf("%d - Greet%s", GREET, lineSeparator());
+        games.forEach((key, value) -> out.printf("%d - %s%s", key, value.getName(), lineSeparator()));
+        out.printf("%d - Exit%s", EXIT, lineSeparator());
 
-            selection = CliHelper.readInt("Your choice: ");
+        selection = CliHelper.readInt("Your choice: ");
 
-            if (selection == GREET) {
-                Cli.greet();
-            } else if (selection != EXIT) {
-                playerName = Cli.greet();
-                new Engine(playerName).start(games.get(selection));
-            }
+        if (selection == GREET) {
+            Cli.greet();
+        } else if (selection != EXIT) {
+            String playerName = Cli.greet();
+            new Engine(playerName).start(games.get(selection));
         }
     }
 }
