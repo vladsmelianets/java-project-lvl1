@@ -46,8 +46,9 @@ public class App {
             selection = CliHelper.readInt("Your choice: ");
 
             if (selection == GREET) {
-                playerName = Cli.greet();
+                Cli.greet();
             } else if (selection != EXIT) {
+                playerName = Cli.greet();
                 new Engine(playerName).start(games.get(selection));
             }
         }
