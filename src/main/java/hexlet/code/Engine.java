@@ -15,13 +15,12 @@ public final class Engine {
         Scanner scanner = new Scanner(System.in);
 
         out.println(rules);
-        System.out.println(System.lineSeparator() + "Welcome to the Brain Games!");
-        System.out.print("May I have your name? ");
+        out.println(System.lineSeparator() + "Welcome to the Brain Games!");
+        out.print("May I have your name? ");
         String userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        out.println("Hello, " + userName + "!");
 
         boolean isWon = playRounds(gameRounds, userName);
-
         if (isWon) {
             out.printf("Congratulations, %s!%s", userName, lineSeparator());
         }
