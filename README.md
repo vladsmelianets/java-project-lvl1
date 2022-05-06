@@ -13,3 +13,10 @@
 ### Screenshots
 
 [![Even](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/even.png)](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/even.png)
+[![Calc](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/calc.png)](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/calc.png)
+[![GCD](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/gcd.png)](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/gcd.png)
+[![Progression](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/progression.png)](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/progression.png)
+[![Prime](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/prime.png)](https://github.com/vladsmelianets/java-project-lvl1/blob/main/screenshots/prime.png)
+
+
+
