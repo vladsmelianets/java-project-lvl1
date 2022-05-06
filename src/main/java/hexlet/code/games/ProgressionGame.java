@@ -36,7 +36,7 @@ public final class ProgressionGame {
             String answer = "";
             for (int j = 0; j <= progressionLength; j++) {
                 int number = baseValue + (iterationValue * j);
-                if (i == hiddenNumberIndex) {
+                if (j == hiddenNumberIndex) {
                     question.append("..");
                     answer = String.valueOf(number);
                 } else {
