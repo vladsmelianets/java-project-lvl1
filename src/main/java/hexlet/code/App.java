@@ -31,8 +31,6 @@ public class App {
             + format("%d - Prime%s", PRIME, lineSeparator())
             + format("%d - Exit%s", EXIT, lineSeparator());
 
-    private static final String DEFAULT_PLAYER = "UnknownPlayer";
-
     public static void main(String[] args) {
         out.print(MENU);
         int selection = new Scanner(System.in).nextInt();
@@ -42,19 +40,19 @@ public class App {
                 Cli.greet();
                 break;
             case (EVEN):
-                new Engine(DEFAULT_PLAYER).start(new EvenGame());
+                new Engine().start(new EvenGame());
                 break;
             case (CALC):
-                new Engine(DEFAULT_PLAYER).start(new CalcGame());
+                new Engine().start(new CalcGame());
                 break;
             case (GCD):
-                new Engine(DEFAULT_PLAYER).start(new GcdGame());
+                new Engine().start(new GcdGame());
                 break;
             case (PROGRESSION):
-                new Engine(DEFAULT_PLAYER).start(new ProgressionGame());
+                new Engine().start(new ProgressionGame());
                 break;
             case (PRIME):
-                new Engine(DEFAULT_PLAYER).start(new PrimeGame());
+                new Engine().start(new PrimeGame());
                 break;
             default:
                 break;

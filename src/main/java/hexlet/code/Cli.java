@@ -12,7 +12,7 @@ public final class Cli {
 
         System.out.println(System.lineSeparator() + "Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        String userName = scanner.next();
+        String userName = scanner.nextLine();
         System.out.println("Hello, " + userName + "!");
     }
 }
