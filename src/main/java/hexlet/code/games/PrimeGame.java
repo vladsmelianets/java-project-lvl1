@@ -1,43 +1,39 @@
 package hexlet.code.games;
 
-import hexlet.code.model.GameSession;
+import hexlet.code.Engine;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
-public final class PrimeGame implements Game {
+public final class PrimeGame {
 
-    private static final String YES = "yes";
-    private static final String NO = "no";
+    private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final int NUMBER_OF_ROUNDS = 3;
+
+    private static final Random RANDOM = new Random();
     private static final int TREE_DIGIT_BOUND = 1000;
 
-    private final String name;
-    private final String rules;
-    private final Random random;
-
-    public PrimeGame() {
-        this.name = "Prime";
-        this.rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        this.random = new Random();
+    private PrimeGame() {
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public static void play() {
+        Map<String, String> gameRounds = generateGameRounds();
+        Engine.start(gameRounds, RULES);
     }
 
-    @Override
-    public String getRules() {
-        return rules;
+    private static Map<String, String> generateGameRounds() {
+        Map<String, String> gameRounds = new HashMap<>();
+        for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
+            int number = RANDOM.nextInt(TREE_DIGIT_BOUND);
+            String question = String.valueOf(number);
+            String answer = isPrime(number) ? "yes" : "no";
+            gameRounds.put(question, answer);
+        }
+        return gameRounds;
     }
 
-    @Override
-    public GameSession getSession() {
-        int question = random.nextInt(TREE_DIGIT_BOUND);
-        String answer = isPrime(question) ? YES : NO;
-        return new GameSession(String.valueOf(question), answer);
-    }
-
-    private boolean isPrime(int number) {
+    private static boolean isPrime(int number) {
         if (number <= 1) {
             return false;
         }

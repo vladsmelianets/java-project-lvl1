@@ -1,38 +1,34 @@
 package hexlet.code.games;
 
-import hexlet.code.model.GameSession;
+import hexlet.code.Engine;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
-public final class EvenGame implements Game {
+public final class EvenGame {
 
-    private static final String YES = "yes";
-    private static final String NO = "no";
+    private static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final int NUMBER_OF_ROUNDS = 3;
 
-    private final String name;
-    private final String rules;
-    private final Random random;
+    private static final Random RANDOM = new Random();
 
-    public EvenGame() {
-        this.name = "Even";
-        this.rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        this.random = new Random();
+    private EvenGame() {
     }
 
-    @Override
-    public String getName() {
-        return name;
+    public static void play() {
+        Map<String, String> gameRounds = generateGameRounds();
+        Engine.start(gameRounds, RULES);
     }
 
-    @Override
-    public String getRules() {
-        return rules;
-    }
-
-    @Override
-    public GameSession getSession() {
-        int question = random.nextInt();
-        String answer = question % 2 == 0 ? YES : NO;
-        return new GameSession(String.valueOf(question), answer);
+    private static Map<String, String> generateGameRounds() {
+        Map<String, String> gameRounds = new HashMap<>();
+        for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
+            int number = RANDOM.nextInt();
+            String question = String.valueOf(number);
+            String answer = number % 2 == 0 ? "yes" : "no";
+            gameRounds.put(question, answer);
+        }
+        return gameRounds;
     }
 }
