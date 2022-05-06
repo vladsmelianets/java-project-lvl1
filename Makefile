@@ -22,3 +22,5 @@ run-dist:
 build-run: build run
 
 install-run: install run-dist
+
+.PHONY: build
