@@ -15,7 +15,7 @@ public final class CalcGame {
     private static final int TWO_DIGIT_BOUND = 100;
     private static final int OPERATOR_DICE_BOUND = 3;
 
-    private static final char[] operators = {'+', '-', '*'};
+    private static final char[] OPERATORS = {'+', '-', '*'};
 
     private CalcGame() {
     }
@@ -30,11 +30,11 @@ public final class CalcGame {
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
             int firstNumber = RANDOM.nextInt(TWO_DIGIT_BOUND);
             int secondNumber = RANDOM.nextInt(TWO_DIGIT_BOUND);
-            int operatorDice = RANDOM.nextInt(OPERATOR_DICE_BOUND);
+            int dice = RANDOM.nextInt(OPERATOR_DICE_BOUND);
 
             String question;
             String answer;
-            char operator = operators[operatorDice];
+            char operator = OPERATORS[dice];
             switch (operator) {
                 case '-':
                     question = concatQuestion(firstNumber, secondNumber, operator);
