@@ -1,20 +1,17 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.utils.RandomNumberUtils;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public final class ProgressionGame {
 
     private static final String RULES = "What number is missing in the progression?";
     private static final int NUMBER_OF_ROUNDS = 3;
-
-    private static final Random RANDOM = new Random();
     private static final int LOW_DICE = 4;
     private static final int HIGH_DICE = 10;
-    private static final int TWO_DIGIT_BOUND = 100;
 
     private ProgressionGame() {
     }
@@ -27,10 +24,10 @@ public final class ProgressionGame {
     private static Map<String, String> generateGameRounds() {
         Map<String, String> gameRounds = new HashMap<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            int progressionLength = RANDOM.nextInt(LOW_DICE, HIGH_DICE);
-            int hiddenNumberIndex = RANDOM.nextInt(progressionLength + 1);
-            int baseValue = RANDOM.nextInt(TWO_DIGIT_BOUND);
-            int iterationValue = RANDOM.nextInt(LOW_DICE + 1, HIGH_DICE + 1);
+            int progressionLength = RandomNumberUtils.getBoundedNumber(LOW_DICE, HIGH_DICE);
+            int hiddenNumberIndex = RandomNumberUtils.getBoundedNumber(progressionLength + 1);
+            int baseValue = RandomNumberUtils.getTwoDigitNumber();
+            int iterationValue = RandomNumberUtils.getBoundedNumber(LOW_DICE + 1, HIGH_DICE + 1);
 
             StringBuilder question = new StringBuilder(baseValue);
             String answer = "";

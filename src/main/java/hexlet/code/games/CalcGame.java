@@ -1,20 +1,16 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.utils.RandomNumberUtils;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 public final class CalcGame {
 
     private static final String RULES = "What is the result of the expression?";
     private static final int NUMBER_OF_ROUNDS = 3;
-
-    private static final Random RANDOM = new Random();
-    private static final int TWO_DIGIT_BOUND = 100;
     private static final int OPERATOR_DICE_BOUND = 3;
-
     private static final char[] OPERATORS = {'+', '-', '*'};
 
     private CalcGame() {
@@ -28,9 +24,9 @@ public final class CalcGame {
     private static Map<String, String> generateGameRounds() {
         Map<String, String> gameRounds = new HashMap<>();
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            int firstNumber = RANDOM.nextInt(TWO_DIGIT_BOUND);
-            int secondNumber = RANDOM.nextInt(TWO_DIGIT_BOUND);
-            int dice = RANDOM.nextInt(OPERATOR_DICE_BOUND);
+            int firstNumber = RandomNumberUtils.getTwoDigitNumber();
+            int secondNumber = RandomNumberUtils.getTwoDigitNumber();
+            int dice = RandomNumberUtils.getBoundedNumber(OPERATOR_DICE_BOUND);
 
             String question;
             String answer;
