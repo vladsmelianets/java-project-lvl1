@@ -32,6 +32,10 @@ public final class CalcGame {
             String answer;
             char operator = OPERATORS[dice];
             switch (operator) {
+                case '+':
+                    question = concatQuestion(firstNumber, secondNumber, '+');
+                    answer = String.valueOf(firstNumber + secondNumber);
+                    break;
                 case '-':
                     question = concatQuestion(firstNumber, secondNumber, operator);
                     answer = String.valueOf(firstNumber - secondNumber);
@@ -41,8 +45,7 @@ public final class CalcGame {
                     answer = String.valueOf(firstNumber * secondNumber);
                     break;
                 default:
-                    question = concatQuestion(firstNumber, secondNumber, '+');
-                    answer = String.valueOf(firstNumber + secondNumber);
+                    throw new Error("Unknown operator: " + operator);
             }
             gameRounds.put(question, answer);
         }

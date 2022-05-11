@@ -37,6 +37,8 @@ public class App {
             case (GREET):
                 Cli.greet();
                 break;
+            case (EXIT):
+                break;
             case (EVEN):
                 EvenGame.play();
                 break;
@@ -53,7 +55,7 @@ public class App {
                 PrimeGame.play();
                 break;
             default:
-                break;
+                throw new Error("Unknown selection: " + selection);
         }
     }
 }
