@@ -9,7 +9,7 @@ import java.util.Map;
 public final class ProgressionGame {
 
     private static final String RULES = "What number is missing in the progression?";
-    private static final int LOW_DICE = 4;
+    private static final int LOW_DICE = 5;
     private static final int HIGH_DICE = 10;
     private static final int ITERATION_BOUND = 51;
 
