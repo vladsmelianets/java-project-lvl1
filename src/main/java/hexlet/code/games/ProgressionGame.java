@@ -11,6 +11,7 @@ public final class ProgressionGame {
     private static final String RULES = "What number is missing in the progression?";
     private static final int LOW_DICE = 4;
     private static final int HIGH_DICE = 10;
+    private static final int ITERATION_BOUND = 51;
 
     private ProgressionGame() {
     }
@@ -20,7 +21,7 @@ public final class ProgressionGame {
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int progressionLength = RandomNumberUtils.getBoundedNumber(LOW_DICE, HIGH_DICE);
             int baseValue = RandomNumberUtils.getTwoDigitNumber();
-            int iterationValue = RandomNumberUtils.getBoundedNumber(LOW_DICE + 1, HIGH_DICE + 1);
+            int iterationValue = RandomNumberUtils.getBoundedNumber(ITERATION_BOUND);
             int[] progression = generateProgression(progressionLength, baseValue, iterationValue);
             int hiddenNumberIndex = RandomNumberUtils.getBoundedNumber(progressionLength);
             gameRounds.putAll(generateRound(progression, hiddenNumberIndex));
