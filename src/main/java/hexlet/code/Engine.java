@@ -7,6 +7,8 @@ import static java.lang.System.out;
 
 public final class Engine {
 
+    public static final int NUMBER_OF_ROUNDS = 3;
+
     private Engine() {
     }
 

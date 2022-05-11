@@ -9,25 +9,25 @@ import java.util.Map;
 public final class PrimeGame {
 
     private static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static final int NUMBER_OF_ROUNDS = 3;
 
     private PrimeGame() {
     }
 
     public static void play() {
-        Map<String, String> gameRounds = generateGameRounds();
+        Map<String, String> gameRounds = new HashMap<>();
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            int number = RandomNumberUtils.getThreeDigitNumber();
+            gameRounds.putAll(generateRound(number));
+        }
         Engine.start(gameRounds, RULES);
     }
 
-    private static Map<String, String> generateGameRounds() {
-        Map<String, String> gameRounds = new HashMap<>();
-        for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
-            int number = RandomNumberUtils.getThreeDigitNumber();
-            String question = String.valueOf(number);
-            String answer = isPrime(number) ? "yes" : "no";
-            gameRounds.put(question, answer);
-        }
-        return gameRounds;
+    private static Map<String, String> generateRound(int number) {
+        Map<String, String> round = new HashMap<>();
+        String question = String.valueOf(number);
+        String answer = isPrime(number) ? "yes" : "no";
+        round.put(question, answer);
+        return round;
     }
 
     private static boolean isPrime(int number) {
