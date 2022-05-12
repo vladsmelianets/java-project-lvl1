@@ -6,10 +6,14 @@ import hexlet.code.games.GcdGame;
 import hexlet.code.games.PrimeGame;
 import hexlet.code.games.ProgressionGame;
 
+import java.util.Scanner;
+
 import static java.lang.String.format;
 import static java.lang.System.lineSeparator;
 
 public class App {
+
+    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static final int EXIT = 0;
     public static final int GREET = 1;
@@ -31,7 +35,7 @@ public class App {
     public static void main(String[] args) {
         System.out.print(MENU);
 
-        int selection = UserInput.getNumber();
+        int selection = Integer.parseInt(SCANNER.nextLine());
 
         switch (selection) {
             case (GREET):
