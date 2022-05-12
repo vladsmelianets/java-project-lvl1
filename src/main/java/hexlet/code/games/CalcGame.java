@@ -32,15 +32,15 @@ public final class CalcGame {
         String answer;
         switch (operator) {
             case '+':
-                question = concatQuestion(firstNumber, secondNumber, '+');
+                question = firstNumber + " " + '+' + " " + secondNumber;
                 answer = String.valueOf(firstNumber + secondNumber);
                 break;
             case '-':
-                question = concatQuestion(firstNumber, secondNumber, operator);
+                question = firstNumber + " " + operator + " " + secondNumber;
                 answer = String.valueOf(firstNumber - secondNumber);
                 break;
             case '*':
-                question = concatQuestion(firstNumber, secondNumber, operator);
+                question = firstNumber + " " + operator + " " + secondNumber;
                 answer = String.valueOf(firstNumber * secondNumber);
                 break;
             default:
@@ -48,9 +48,5 @@ public final class CalcGame {
         }
         round.put(question, answer);
         return round;
-    }
-
-    private static String concatQuestion(int firstNumber, int secondNumber, char operator) {
-        return firstNumber + " " + operator + " " + secondNumber;
     }
 }
